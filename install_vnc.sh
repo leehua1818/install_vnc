@@ -131,7 +131,7 @@ update_source()
 {
   #wget "http://oss.aliyuncs.com/aliyunecs/update_source.tgz?spm=5176.7150518.1996836753.5.67nzlg&file=update_source.tgz" -O update_source.tgz
   #tar -zxvf update_source.tgz
-  bash update_source.sh
+  bash update_source_not_aliyun.sh
 }
 
 rhel5_vnc_config()
