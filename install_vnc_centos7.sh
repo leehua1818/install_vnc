@@ -132,7 +132,10 @@ update_source()
   #wget "http://oss.aliyuncs.com/aliyunecs/update_source.tgz?spm=5176.7150518.1996836753.5.67nzlg&file=update_source.tgz" -O update_source.tgz
   #tar -zxvf update_source.tgz
   #bash update_source_not_aliyun.sh
-  bash update_source.sh
+  #bash update_source.sh
+  yum clean metadata
+  yum makecache
+  cd ~
 }
 
 rhel5_vnc_config()
@@ -291,9 +294,9 @@ EOF
 
 centos7_install_vnc_server()
 {
-  if ! yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+  if ! yum groupinstall "Xfce" "Graphical Administration Tools" -y
   then
-    exit_script "NOME Desktop Graphical Administration Tools"
+    exit_script "Xfce Desktop Graphical Administration Tools"
   fi
   if ! yum install tigervnc-server -y
   then
